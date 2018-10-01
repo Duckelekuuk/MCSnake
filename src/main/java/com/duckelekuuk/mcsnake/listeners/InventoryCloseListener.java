@@ -9,14 +9,14 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 public class InventoryCloseListener implements Listener {
 
     @EventHandler
-    public void onClose(InventoryCloseEvent event) {
-        if (!(event.getPlayer() instanceof Player)) return;
-        Player player = (Player) event.getPlayer();
+    public void onClose(InventoryCloseEvent e) {
+        if (!(e.getPlayer() instanceof Player)) return;
+        Player player = (Player) e.getPlayer();
 
         if (ConsoleManager.getConsole(player) == null) return;
 
         ConsoleManager.removeConsole(player);
 
-        event.getPlayer().getInventory().clear();
+        e.getPlayer().getInventory().clear();
     }
 }
