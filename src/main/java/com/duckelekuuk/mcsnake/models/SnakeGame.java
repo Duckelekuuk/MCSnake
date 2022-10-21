@@ -56,6 +56,11 @@ public class SnakeGame {
         parts.add(Properties.START_POSITION);
     }
 
+    /**
+     * Update the snake's position
+     * Check for collision
+     * @return boolean if the snake should be dead
+     */
     public boolean update() {
         int head = parts.get(parts.size() - 1);
         int nextX = InventoryUtils.getCoordinates(head)[0] + currentDirection.getOffsetX();
