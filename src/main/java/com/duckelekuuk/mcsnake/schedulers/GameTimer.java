@@ -12,8 +12,8 @@ public class GameTimer implements Runnable {
 
     @Override
     public void run() {
-        if (!console.getSnake().update()) {
-            console.endGame(true);
-        }
+        if (console.getSnake().update()) return;
+
+        console.endGame(true);
     }
 }

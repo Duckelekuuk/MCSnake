@@ -21,24 +21,31 @@ public class DisplayGameOver implements Runnable {
     public void run() {
         step++;
 
+        // Do first display
         if (step == 0) {
             display();
             return;
         }
 
+        // Scroll
         if (step > GameOverScreen.SCROLL_LENGTH + 5) {
             console.close();
             return;
         }
 
 
+        // Small pause before and after scrolls
         if ((step > 0 && step <= 5) || (step > GameOverScreen.SCROLL_LENGTH && step <= GameOverScreen.SCROLL_LENGTH + 5)) {
             return;
         }
 
+        // Display layout
         display();
     }
 
+    /**
+     * Display the game over screen
+     */
     private void display() {
         List<String> nextFrame = GameOverScreen.getSubLayout(step);
 
@@ -50,6 +57,12 @@ public class DisplayGameOver implements Runnable {
         });
     }
 
+    /**
+     * Change an item in the console
+     * @param x X position
+     * @param y Y position
+     * @param red If the item should be red or black
+     */
     private void changeItem(int x, int y, boolean red) {
         int position = InventoryUtils.getLocation(x, y);
 

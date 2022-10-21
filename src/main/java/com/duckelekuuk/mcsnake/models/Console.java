@@ -6,6 +6,7 @@ import com.duckelekuuk.mcsnake.schedulers.GameTimer;
 import com.duckelekuuk.mcsnake.utils.InventoryUtils;
 import com.duckelekuuk.mcsnake.utils.Properties;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -24,13 +25,17 @@ public class Console {
     private Inventory inventory;
     private BukkitTask timer;
     private BukkitTask gameOverTimer;
-    private @Setter Button pressedButton;
 
-    private SnakeGame snake;
-    private List<Integer> food = new ArrayList<>();
+    @Setter
+    private Button pressedButton;
 
-    private @Setter boolean playing = false;
-    private @Setter boolean gameOver = false;
+    private final SnakeGame snake;
+    private final List<Integer> food = new ArrayList<>();
+
+    @Setter
+    private boolean playing = false;
+    @Setter
+    private boolean gameOver = false;
 
     public Console(Player player) {
         this.player = player;
@@ -71,7 +76,7 @@ public class Console {
         return player.getOpenInventory().getTopInventory();
     }
 
-    public void onClick(Button button) {
+    public void onClick(@NonNull Button button) {
         if (button == getPressedButton()) return;
         if (!button.getInfo().canBePressed(this)) return;
 
@@ -93,6 +98,14 @@ public class Console {
         player.closeInventory();
     }
 
+    /**
+     * Set up the console for the snake game
+     * - Clear the inventory
+     * - Set the controller
+     * - Set the screen
+     * - Spawn the snake
+     * - Spawn the food
+     */
     private void setupConsole() {
         getScreen().clear();
         getController().clear();

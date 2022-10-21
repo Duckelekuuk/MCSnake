@@ -11,6 +11,7 @@ public class SnakeCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        // Check if the command sender is a player
         if (!(commandSender instanceof Player)) {
             commandSender.sendMessage("§cCommand can only be executed by a player");
             return true;
@@ -18,9 +19,11 @@ public class SnakeCommand implements CommandExecutor {
 
         Player player = (Player) commandSender;
 
+        // Register the console
         Console console = new Console(player);
         ConsoleManager.registerConsole(console);
 
+        // Open the console
         console.open();
 
         return true;

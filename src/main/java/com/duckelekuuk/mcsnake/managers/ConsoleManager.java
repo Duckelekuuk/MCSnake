@@ -13,7 +13,6 @@ import java.util.UUID;
 @UtilityClass
 public class ConsoleManager {
 
-
     private static final Map<UUID, Console> consoles = new HashMap<>();
 
     public static Console getConsole(Player player) {
