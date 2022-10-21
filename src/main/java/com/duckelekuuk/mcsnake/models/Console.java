@@ -75,20 +75,14 @@ public class Console {
         if (button == getPressedButton()) return;
         if (!button.getInfo().canBePressed(this)) return;
 
-        if (getPressedButton() != null) getPressedButton().getInfo().unPress(this);
-
         button.getInfo().press(this);
-        pressedButton = button;
+        button.getInfo().unPress(this);
 
-        attemptStarting();
+        if (!isPlaying() && !isGameOver()) start();
     }
 
     public void setItemInController(int x, int y, ItemStack itemStack) {
         getController().setItem(InventoryUtils.getLocation(x, y), itemStack);
-    }
-
-    public void attemptStarting() {
-        if (!isPlaying() && !isGameOver()) start();
     }
 
     public void open() {

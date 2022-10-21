@@ -1,12 +1,8 @@
 package com.duckelekuuk.mcsnake.models;
 
 import com.duckelekuuk.mcsnake.models.buttons.*;
-import com.duckelekuuk.mcsnake.utils.ItemStackBuilder;
-import com.duckelekuuk.mcsnake.utils.Properties;
-import com.duckelekuuk.mcsnake.utils.SkullBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;

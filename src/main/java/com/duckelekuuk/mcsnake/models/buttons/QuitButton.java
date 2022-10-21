@@ -1,6 +1,5 @@
 package com.duckelekuuk.mcsnake.models.buttons;
 
-import com.duckelekuuk.mcsnake.models.Button;
 import com.duckelekuuk.mcsnake.models.Console;
 import com.duckelekuuk.mcsnake.utils.ItemStackBuilder;
 import org.bukkit.Material;
@@ -23,11 +22,6 @@ public class QuitButton implements IButton {
     @Override
     public ItemStack getItem(boolean active) {
         return ITEM;
-    }
-
-    @Override
-    public Button getButton() {
-        return Button.QUIT;
     }
 
     @Override

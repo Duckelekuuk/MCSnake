@@ -26,13 +26,13 @@ public class DisplayGameOver implements Runnable {
             return;
         }
 
-        if (step > GameOverScreen.SCROLLLENGTH + 5) {
+        if (step > GameOverScreen.SCROLL_LENGTH + 5) {
             console.close();
             return;
         }
 
 
-        if ((step > 0 && step <= 5) || (step > GameOverScreen.SCROLLLENGTH && step <= GameOverScreen.SCROLLLENGTH + 5)) {
+        if ((step > 0 && step <= 5) || (step > GameOverScreen.SCROLL_LENGTH && step <= GameOverScreen.SCROLL_LENGTH + 5)) {
             return;
         }
 

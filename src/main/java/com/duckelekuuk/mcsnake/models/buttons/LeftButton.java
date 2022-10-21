@@ -1,6 +1,5 @@
 package com.duckelekuuk.mcsnake.models.buttons;
 
-import com.duckelekuuk.mcsnake.models.Button;
 import com.duckelekuuk.mcsnake.models.Console;
 import com.duckelekuuk.mcsnake.models.Direction;
 import com.duckelekuuk.mcsnake.utils.Properties;
@@ -28,18 +27,13 @@ public class LeftButton implements IButton {
     }
 
     @Override
-    public Button getButton() {
-        return Button.LEFT;
-    }
-
-    @Override
     public boolean canBePressed(Console console) {
         return console.getSnake().canGo(Direction.LEFT);
     }
 
     @Override
     public void press(Console console) {
-        console.getSnake().setDirection(Direction.LEFT);
+        console.getSnake().setCurrentDirection(Direction.LEFT);
         console.setItemInController(getX(), getY(), getItem(true));
     }
 
