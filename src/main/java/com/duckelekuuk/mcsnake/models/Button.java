@@ -21,7 +21,7 @@ public enum Button {
     RIGHT(new RightButton()),
     QUIT(new QuitButton());
 
-    private IButton info;
+    private final IButton info;
 
     public static Button getButton(ItemStack itemStack) {
         if (itemStack == null) return null;

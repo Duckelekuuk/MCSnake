@@ -1,7 +1,6 @@
 package com.duckelekuuk.mcsnake.models;
 
 import com.duckelekuuk.mcsnake.MCSnake;
-import com.duckelekuuk.mcsnake.models.buttons.IButton;
 import com.duckelekuuk.mcsnake.schedulers.DisplayGameOver;
 import com.duckelekuuk.mcsnake.schedulers.GameTimer;
 import com.duckelekuuk.mcsnake.utils.InventoryUtils;
@@ -16,10 +15,7 @@ import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @Getter
 public class Console {
@@ -30,7 +26,7 @@ public class Console {
     private BukkitTask gameOverTimer;
     private @Setter Button pressedButton;
 
-    private Snake snake;
+    private SnakeGame snake;
     private List<Integer> food = new ArrayList<>();
 
     private @Setter boolean playing = false;
@@ -39,7 +35,7 @@ public class Console {
     public Console(Player player) {
         this.player = player;
         this.inventory = Bukkit.getServer().createInventory(null, Properties.WIDTH * Properties.HEIGHT,  "Snake - " + player.getName());
-        this.snake = new Snake(this);
+        this.snake = new SnakeGame(this);
 
         Bukkit.getServer().getScheduler().runTaskLater(MCSnake.getPlugin(), this::setupConsole, 1);
 

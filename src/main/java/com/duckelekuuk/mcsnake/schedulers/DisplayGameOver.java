@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 
 public class DisplayGameOver implements Runnable {
 
-    private Console console;
+    private final Console console;
     private int step = -1;
 
     public DisplayGameOver(Console console) {
