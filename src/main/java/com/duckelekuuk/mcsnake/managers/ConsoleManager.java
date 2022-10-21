@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.experimental.UtilityClass;
 import org.bukkit.entity.Player;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 @Getter
 @UtilityClass

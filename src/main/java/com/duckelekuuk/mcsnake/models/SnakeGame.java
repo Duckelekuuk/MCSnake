@@ -18,7 +18,7 @@ public class SnakeGame {
     private final List<Integer> parts = new ArrayList<>();
 
     @Setter
-    private Direction direction;
+    private Direction currentDirection;
     private int size = 1;
     private int foodAmount = 0;
 
@@ -47,8 +47,8 @@ public class SnakeGame {
     }
 
     public boolean canGo(Direction direction) {
-        // Old method that does not work
-        return true;
+        // Check if movement cancels out
+        return !(direction.getOffsetX() + currentDirection.getOffsetX() == 0 && direction.getOffsetY() + currentDirection.getOffsetY() == 0);
     }
 
     public void spawnSnake() {
@@ -58,8 +58,8 @@ public class SnakeGame {
 
     public boolean update() {
         int head = parts.get(parts.size() - 1);
-        int nextX = InventoryUtils.getCoordinates(head)[0] + direction.getOffsetX();
-        int nextY = InventoryUtils.getCoordinates(head)[1] + direction.getOffsetY();
+        int nextX = InventoryUtils.getCoordinates(head)[0] + currentDirection.getOffsetX();
+        int nextY = InventoryUtils.getCoordinates(head)[1] + currentDirection.getOffsetY();
 
         // Checking for collision with wall
         if (nextX < 0 || nextX > (Properties.WIDTH - 1)) return false;
