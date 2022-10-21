@@ -2,12 +2,15 @@ package com.duckelekuuk.mcsnake.managers;
 
 import com.duckelekuuk.mcsnake.models.Console;
 import lombok.Getter;
+import lombok.experimental.UtilityClass;
 import org.bukkit.entity.Player;
 
 import java.util.*;
 
 @Getter
+@UtilityClass
 public class ConsoleManager {
+
 
     private static Map<UUID, Console> consoles = new HashMap<>();
 

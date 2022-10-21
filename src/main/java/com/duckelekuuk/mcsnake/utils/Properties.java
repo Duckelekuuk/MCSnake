@@ -1,18 +1,20 @@
 package com.duckelekuuk.mcsnake.utils;
 
+import lombok.experimental.UtilityClass;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+@UtilityClass
 public class Properties {
 
 
     /* Settings */
-    public static int WIDTH = 9;
-    public static int HEIGHT = 6;
-    public static int FOOD_AMOUNT = 1;
-    public static int START_POSITION = InventoryUtils.getLocation(4, 3);
-    public static int GAME_SPEED = 10;
-    public static int GAMEOVER_SPEED = 2;
+    public static final int WIDTH = 9;
+    public static final int HEIGHT = 6;
+    public static final int FOOD_AMOUNT = 1;
+    public static final int START_POSITION = InventoryUtils.getLocation(4, 3);
+    public static final int GAME_SPEED = 10;
+    public static final int GAMEOVER_SPEED = 2;
 
     /* Skulls */
     public static final String SKULL_UP = "http://textures.minecraft.net/texture/2d9287616343d833e9e7317159caa2cb3e59745113962c1379052ce478884fa";

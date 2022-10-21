@@ -20,9 +20,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public final class ItemStackBuilder {
 
-    private final ItemStack itemStack;
-    private final List<ItemFlag> ALL_FLAGS = ImmutableList.of(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES,
+    private static final List<ItemFlag> ALL_FLAGS = ImmutableList.of(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES,
             ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_POTION_EFFECTS, ItemFlag.HIDE_DESTROYS, ItemFlag.HIDE_PLACED_ON);
+
+    private final ItemStack baseItem;
 
     public static ItemStackBuilder of(Material material) {
         return new ItemStackBuilder(new ItemStack(material));
@@ -33,20 +34,20 @@ public final class ItemStackBuilder {
     }
 
     private ItemStackBuilder(ItemStack itemStack) {
-        this.itemStack = checkNotNull(itemStack, "itemStack is null");
+        this.baseItem = checkNotNull(itemStack, "itemStack is null");
     }
 
     private ItemStackBuilder editMeta(Consumer<ItemMeta> itemMeta) {
-        ItemMeta meta = itemStack.getItemMeta();
+        ItemMeta meta = baseItem.getItemMeta();
         if (meta != null) {
             itemMeta.accept(meta);
-            itemStack.setItemMeta(meta);
+            baseItem.setItemMeta(meta);
         }
         return this;
     }
 
     private ItemStackBuilder editItem(Consumer<ItemStack> item) {
-        item.accept(itemStack);
+        item.accept(baseItem);
         return this;
     }
 
@@ -137,7 +138,7 @@ public final class ItemStackBuilder {
     }
 
     public ItemStack build() {
-        return itemStack;
+        return baseItem;
     }
 }
 

@@ -106,13 +106,6 @@ public class Console {
     private void setupConsole() {
         getScreen().clear();
         getController().clear();
-
-        /* Setup screen */
-//        List<Integer> spots = IntStream.range(0, (Properties.WIDTH * Properties.HEIGHT) - 1).boxed().collect(Collectors.toList());
-//        spots.remove(Properties.START_POSITION);
-//        Collections.shuffle(spots);
-//
-//        getScreen().setItem(spots.get(0), Properties.FOOD);
         getSnake().spawnSnake();
         getSnake().spawnFood();
 

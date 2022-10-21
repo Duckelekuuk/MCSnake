@@ -1,10 +1,12 @@
 package com.duckelekuuk.mcsnake.utils;
 
+import lombok.experimental.UtilityClass;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+@UtilityClass
 public class InventoryUtils {
 
     public static int getLocation(int x, int y) {
@@ -13,8 +15,8 @@ public class InventoryUtils {
 
     public static int[] getCoordinates(int location) {
         int[] returnData = new int[2];
-        returnData[0] = (int) Math.floor(location % 9);
-        returnData[1] = (int) Math.floor(location / 9);
+        returnData[0] = location % 9;
+        returnData[1] = location / 9;
         return returnData;
     }
 
