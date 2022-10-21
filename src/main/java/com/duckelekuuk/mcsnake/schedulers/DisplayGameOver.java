@@ -46,9 +46,7 @@ public class DisplayGameOver implements Runnable {
             String row = nextFrame.get(y);
             String[] segments = row.split("");
 
-            IntStream.range(0, segments.length).forEach(x -> {
-                changeItem(x, y, segments[x].equalsIgnoreCase("#"));
-            });
+            IntStream.range(0, segments.length).forEach(x -> changeItem(x, y, segments[x].equalsIgnoreCase("#")));
         });
     }
 

@@ -4,10 +4,10 @@ import com.duckelekuuk.mcsnake.utils.InventoryUtils;
 import com.duckelekuuk.mcsnake.utils.Properties;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.lang.math.IntRange;
-import org.bukkit.Bukkit;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 

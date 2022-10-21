@@ -3,7 +3,6 @@ package com.duckelekuuk.mcsnake.listeners;
 import com.duckelekuuk.mcsnake.managers.ConsoleManager;
 import com.duckelekuuk.mcsnake.models.Button;
 import com.duckelekuuk.mcsnake.models.Console;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;

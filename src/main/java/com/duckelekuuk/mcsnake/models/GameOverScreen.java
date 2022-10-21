@@ -1,12 +1,15 @@
 package com.duckelekuuk.mcsnake.models;
 
+import lombok.experimental.UtilityClass;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@UtilityClass
 public class GameOverScreen {
 
-    public static final String[] LAYOUT = new String[]{
+    private static final String[] LAYOUT = new String[]{
             "**********************************************",
             "**####*####*#***#*####**####*#***#*####*###***",
             "**#****#**#*##*##*#*****#**#*#***#*#****#**#**",

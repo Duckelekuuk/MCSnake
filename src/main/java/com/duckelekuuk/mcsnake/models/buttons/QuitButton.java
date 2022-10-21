@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class QuitButton implements IButton {
 
-    private static ItemStack ITEM = ItemStackBuilder.of(Material.BARRIER).displayName("Quit").build();
+    private static final ItemStack ITEM = ItemStackBuilder.of(Material.BARRIER).displayName("Quit").build();
 
     @Override
     public int getX() {
@@ -43,5 +43,6 @@ public class QuitButton implements IButton {
 
     @Override
     public void unPress(Console console) {
+        // Do nothing
     }
 }
