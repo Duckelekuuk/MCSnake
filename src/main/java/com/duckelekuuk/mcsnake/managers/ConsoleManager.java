@@ -12,7 +12,7 @@ import java.util.*;
 public class ConsoleManager {
 
 
-    private static Map<UUID, Console> consoles = new HashMap<>();
+    private static final Map<UUID, Console> consoles = new HashMap<>();
 
     public static Console getConsole(Player player) {
         return consoles.get(player.getUniqueId());

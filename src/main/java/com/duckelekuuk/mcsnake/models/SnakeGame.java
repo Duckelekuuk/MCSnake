@@ -12,16 +12,17 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Getter
-public class Snake {
+public class SnakeGame {
+
+    private final Console console;
+    private final List<Integer> parts = new ArrayList<>();
 
     @Setter
     private Direction direction;
-    private Console console;
-    private List<Integer> parts = new ArrayList<>();
     private int size = 1;
     private int foodAmount = 0;
 
-    public Snake(Console console) {
+    public SnakeGame(Console console) {
         this.console = console;
     }
 
@@ -46,11 +47,7 @@ public class Snake {
     }
 
     public boolean canGo(Direction direction) {
-        if (direction.equals(Direction.UP)) return direction != Direction.DOWN;
-        if (direction.equals(Direction.DOWN)) return direction != Direction.UP;
-        if (direction.equals(Direction.LEFT)) return direction != Direction.RIGHT;
-        if (direction.equals(Direction.RIGHT)) return direction != Direction.LEFT;
-
+        // Old method that does not work
         return true;
     }
 

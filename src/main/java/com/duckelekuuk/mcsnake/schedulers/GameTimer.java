@@ -8,7 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class GameTimer implements Runnable {
 
-    private Console console;
+    private final Console console;
 
     @Override
     public void run() {
