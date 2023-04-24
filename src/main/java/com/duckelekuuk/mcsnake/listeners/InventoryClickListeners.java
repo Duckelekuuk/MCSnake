@@ -12,21 +12,21 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 public class InventoryClickListeners implements Listener {
 
     @EventHandler
-    public void onClick(InventoryClickEvent event) {
-        if (!(event.getWhoClicked() instanceof Player)) return;
+    public void onClick(InventoryClickEvent e) {
+        if (!(e.getWhoClicked() instanceof Player)) return;
 
-        Player player = (Player) event.getWhoClicked();
+        Player player = (Player) e.getWhoClicked();
         Console console = ConsoleManager.getConsole(player);
 
         if (console == null) return;
         if (!console.getInventory().getViewers().contains(player)) return;
 
-        event.setCancelled(true);
-        event.setResult(Event.Result.DENY);
+        e.setCancelled(true);
+        e.setResult(Event.Result.DENY);
 
         if (console.isGameOver()) return;
 
-        Button pressed = Button.getButton(event.getCurrentItem());
+        Button pressed = Button.getButton(e.getCurrentItem());
 
         if (pressed == null) return;
         console.onClick(pressed);
