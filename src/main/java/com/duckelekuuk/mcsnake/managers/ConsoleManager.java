@@ -15,16 +15,16 @@ public class ConsoleManager {
 
     private static final Map<UUID, Console> consoles = new HashMap<>();
 
-    public static Console getConsole(Player player) {
-        return consoles.get(player.getUniqueId());
+    public static Console getConsole(Player p) {
+        return consoles.get(p.getUniqueId());
     }
 
     public static void registerConsole(Console console) {
         consoles.put(console.getPlayer().getUniqueId(), console);
     }
 
-    public static void removeConsole(Player player) {
-        Console console = consoles.remove(player.getUniqueId());
+    public static void removeConsole(Player p) {
+        Console console = consoles.remove(p.getUniqueId());
         if (console.getTimer() != null) console.getTimer().cancel();
         if (console.getGameOverTimer() != null) console.getGameOverTimer().cancel();
     }
